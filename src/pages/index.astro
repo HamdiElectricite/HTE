@@ -1,11 +1,75 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+import HeroSection from "../components/HeroSection.astro";
+import Whatsapp from "../components/Whatsapp.astro";
+import Services from "../components/Services.astro";
+import Slider from "../components/Slider.astro";
+import Layout from "../layouts/Layout.astro";
+import Apropos from "../components/Apropos.astro";
+import Contact from "../components/Contact.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <Whatsapp />
+  <HeroSection />
+  <Slider />
+  <Services />
+  <Apropos />
+  <Contact />
+
+  <script>
+    // WhatsApp bubble scroll behavior with TypeScript typing
+    document.addEventListener('DOMContentLoaded', () => {
+      const whatsappBubble = document.getElementById('whatsapp-bubble') as HTMLElement | null;
+      
+      if (!whatsappBubble) return;
+
+      let isScrolling = false;
+      let scrollTimeout: number | undefined;
+      let pulseInterval: number | undefined;
+
+      const handleScroll = () => {
+        // Hide bubble while scrolling
+        if (!isScrolling && whatsappBubble) {
+          whatsappBubble.style.transform = 'translateX(80px)';
+          whatsappBubble.style.opacity = '0.7';
+          isScrolling = true;
+        }
+
+        // Clear timeout and set new one
+        clearTimeout(scrollTimeout);
+        scrollTimeout = window.setTimeout(() => {
+          // Show bubble after scrolling stops
+          if (whatsappBubble) {
+            whatsappBubble.style.transform = 'translateX(0)';
+            whatsappBubble.style.opacity = '1';
+          }
+          isScrolling = false;
+        }, 150); // Show after 150ms of no scrolling
+      };
+
+      const pulseAnimation = () => {
+        if (!isScrolling && whatsappBubble) {
+          whatsappBubble.style.transform = 'scale(1.1)';
+          window.setTimeout(() => {
+            if (whatsappBubble) {
+              whatsappBubble.style.transform = 'scale(1)';
+            }
+          }, 200);
+        }
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      
+      // Pulse animation every 5 seconds
+      pulseInterval = window.setInterval(pulseAnimation, 5000);
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+        clearTimeout(scrollTimeout);
+        clearInterval(pulseInterval);
+      };
+    });
+  </script>
 </Layout>
