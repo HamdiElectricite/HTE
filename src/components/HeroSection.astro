@@ -7,67 +7,137 @@ import Navbar from "./Navbar.astro";
   class="relative min-h-screen flex flex-col bg-cover bg-center"
   style="background-image: url('/bg1.jpg');"
 >
-  <Navbar/>
-  
+  <Navbar />
+
   <!-- Overlay gradient -->
-  <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"></div>
-  
+  <div
+    class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/20"
+  >
+  </div>
+
   <!-- Main content container -->
-  <div class="relative z-10 flex-1 flex items-center justify-left w-full px-4 sm:px-6 lg:px-8 py-16">
+  <div
+    class="relative z-10 flex-1 flex items-center justify-left w-full px-4 sm:px-6 lg:px-8 py-16"
+  >
     <div class="max-w-7xl w-full">
       <!-- Content wrapper - positioned higher and with max width -->
       <div class="max-w-5xl mx-auto text-center lg:text-left lg:mx-0">
-<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-[linear-gradient(135deg,_white_20%,_#e0e0e0_80%)] bg-clip-text text-transparent">
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight bg-[linear-gradient(135deg,_white_20%,_#e0e0e0_80%)] bg-clip-text text-transparent"
+        >
           Hamdi Travaux Électricité
         </h1>
-        
-        <p class="text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-          Votre partenaire de confiance pour tous vos projets électriques en Tunisie. Expertise, rapidité et qualité garantie.
-          <span class="text-white font-semibold block mt-2">Intervention rapide, travail soigné, prix transparents.</span>
-        </p>
-        
-        <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start">
-          <!-- Contact Button -->
-          <button 
-            class="bg-[#08298E] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg flex items-center justify-center gap-3"
-            onclick="scrollToContact()"
+
+        <p
+          class="text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed max-w-2xl mx-auto lg:mx-0"
+        >
+          Votre partenaire de confiance pour tous vos projets électriques en
+          Tunisie. Expertise, rapidité et qualité garantie.
+          <span class="text-white font-semibold block mt-2"
+            >Intervention rapide, travail soigné, prix transparents.</span
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </p>
+
+        <!-- Action Buttons -->
+        <div
+          class="flex flex-col sm:flex-row gap-4 mb-8 justify-center lg:justify-start"
+        >
+          <!-- Contact Button -->
+          <a
+            href="#contact"
+            class="bg-[#08298E] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-lg flex items-center justify-center gap-3"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
             </svg>
             Nous contacter
-          </button>
-          
+          </a>
+
           <!-- Services Button -->
-          <button 
+          <a
+            href="#services"
             class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 flex items-center justify-center gap-3"
-            onclick="scrollToServices()"
           >
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+              ></path>
             </svg>
             Nos services
-          </button>
+          </a>
         </div>
-        
-        <!-- Trust indicators -->
-        <div class="flex flex-wrap gap-6 text-sm text-gray-300 justify-center lg:justify-start">
-          <div class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10">
-            <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+
+        <!-- Trust indicators - moved above scroll indicator -->
+        <div
+          class="flex flex-wrap gap-4 sm:gap-6 text-sm text-gray-300 justify-center lg:justify-start mb-12 sm:mb-0"
+        >
+          <div
+            class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10"
+          >
+            <svg
+              class="w-5 h-5 mr-2 text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            Professionnels qualifiés et certifiés
+            Professionnels qualifiés
           </div>
-          <div class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10">
-            <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          <div
+            class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10"
+          >
+            <svg
+              class="w-5 h-5 mr-2 text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
             Devis gratuit
           </div>
-          <div class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10">
-            <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          <div
+            class="flex items-center bg-white/5 backdrop-blur-sm rounded-full px-3 py-2 border border-white/10"
+          >
+            <svg
+              class="w-5 h-5 mr-2 text-green-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              ></path>
             </svg>
             Interventions rapides
           </div>
@@ -76,27 +146,14 @@ import Navbar from "./Navbar.astro";
     </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-    <div class="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center backdrop-blur-sm">
+  <!-- Scroll indicator - adjusted positioning -->
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
+  >
+    <div
+      class="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center backdrop-blur-sm"
+    >
       <div class="w-1 h-3 bg-white rounded-full mt-2"></div>
     </div>
   </div>
 </section>
-
-<script>
-  // Simple scroll functions
-  function scrollToContact() {
-    const contactSection = document.getElementById('contact') || document.querySelector('[data-section="contact"]');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  
-  function scrollToServices() {
-    const servicesSection = document.getElementById('services') || document.querySelector('[data-section="services"]');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-</script>
