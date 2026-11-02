@@ -6,7 +6,7 @@
   "use strict";
 
   var WHATSAPP_NUMBER = "21623096669";
-  var CONTACT_EMAIL = "Hamdielectricite611@gmail.com";
+  var CONTACT_EMAIL = "contact@hte-electricite.tn";
 
   /* -----------------------------------------------------------------------
      Utilities
